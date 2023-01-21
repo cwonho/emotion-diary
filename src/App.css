@@ -31,3 +31,63 @@ body {
 		width: 90vw;
 	}
 }
+
+/* Button */
+
+.button {
+	padding: 10px 20px;
+	font-size: 18px;
+	font-family: "Nanum Pen Script";
+	white-space: nowrap;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.button_default {
+	background-color: #ececec;
+	color: black;
+}
+
+.button_positive {
+	background-color: #64c964;
+	color: white;
+}
+
+.button_negative {
+	background-color: #fd565f;
+	color: white;
+}
+
+/* Header */
+
+header {
+	display: flex;
+	align-items: center;
+	padding: 20px 0;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+	display: flex;
+}
+
+.head_text {
+	justify-content: center;
+	width: 50%;
+	font-size: 25px;
+}
+
+.head_btn_left {
+	width: 25%;
+	justify-content: start;
+}
+
+.head_btn_right {
+	justify-content: end;
+	width: 25%;
+}
+
+header button {
+	font-family: "Nanum Pen Script";
+}
