@@ -52,7 +52,7 @@ function App() {
 		dispatch({
 			type: "CREATE",
 			data: {
-				id: listId.currentdate,
+				id: listId.current,
 				date: new Date(date).getTime(),
 				content,
 				emotion,
