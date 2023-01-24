@@ -1,6 +1,6 @@
 import React, { useReducer, useRef } from "react";
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import New from "./pages/New";
@@ -18,7 +18,7 @@ const reducer = (state, action) => {
 		}
 		case "EDIT": {
 			newState = state.map((item) =>
-				item.id === action.data.targetId ? { ...action.data } : item
+				item.id === action.data.id ? action.data : item
 			);
 			break;
 		}
@@ -36,11 +36,11 @@ export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
 const dummyData = [
-	{ id: 1, emotion: 1, content: "오늘의 일기 1번", date: 1674330313749 },
-	{ id: 2, emotion: 2, content: "오늘의 일기 2번", date: 1674330313750 },
-	{ id: 3, emotion: 3, content: "오늘의 일기 3번", date: 1674330313751 },
-	{ id: 4, emotion: 4, content: "오늘의 일기 4번", date: 1674330313752 },
-	{ id: 5, emotion: 5, content: "오늘의 일기 5번", date: 1674330313753 },
+	{ id: 1, emotion: 1, content: "오늘의 일기 1번", date: 1674497702502 },
+	{ id: 2, emotion: 2, content: "오늘의 일기 2번", date: 1674497702503 },
+	{ id: 3, emotion: 3, content: "오늘의 일기 3번", date: 1674497702504 },
+	{ id: 4, emotion: 4, content: "오늘의 일기 4번", date: 1674497702505 },
+	{ id: 5, emotion: 5, content: "오늘의 일기 5번", date: 1674497702506 },
 ];
 
 function App() {
