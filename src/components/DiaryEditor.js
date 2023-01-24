@@ -1,4 +1,4 @@
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useRef, useContext, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Button from "./Button";
@@ -18,13 +18,13 @@ const DiaryEditor = ({ isEdit, originData }) => {
 
 	const { onCreate, onEdit, onDelete } = useContext(DiaryDispatchContext);
 
-	const goBack = () => {
+	const goBack = useCallback(() => {
 		navigate(-1);
-	};
+	}, []);
 
-	const handleEmotionClick = (emotion) => {
+	const handleEmotionClick = useCallback((emotion) => {
 		setEmotion(emotion);
-	};
+	}, []);
 
 	const handleSubmit = () => {
 		if (content.length < 1) {
@@ -115,7 +115,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
 				</section>
 				<section>
 					<div className="control_box">
-						<Button text={"취소하기"} onClick={() => navigate(-1)} />
+						<Button text={"취소하기"} onClick={goBack} />
 						<Button
 							type={"positive"}
 							text={isEdit ? "수정완료" : "작성완료"}

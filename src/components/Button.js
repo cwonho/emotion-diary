@@ -1,3 +1,5 @@
+import React from "react";
+
 const Button = ({ type, text, onClick }) => {
 	const buttonType = ["positive", "negative"].includes(type) ? type : "default";
 	return (
@@ -14,4 +16,4 @@ Button.defaultProps = {
 	type: "default",
 };
 
-export default Button;
+export default React.memo(Button);
