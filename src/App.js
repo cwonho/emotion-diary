@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useRef } from "react";
+import React, { useEffect, useReducer, useRef, useCallback } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
@@ -55,7 +55,7 @@ function App() {
 	}, []);
 
 	// CREATE
-	const onCreate = (date, content, emotion) => {
+	const onCreate = useCallback((date, content, emotion) => {
 		dispatch({
 			type: "CREATE",
 			data: {
@@ -67,10 +67,10 @@ function App() {
 		});
 
 		listId.current += 1;
-	};
+	}, []);
 
 	// EDIT
-	const onEdit = (targetId, date, content, emotion) => {
+	const onEdit = useCallback((targetId, date, content, emotion) => {
 		dispatch({
 			type: "EDIT",
 			data: {
@@ -80,12 +80,12 @@ function App() {
 				emotion,
 			},
 		});
-	};
+	}, []);
 
 	// DELETE
-	const onDelete = (targetId) => {
+	const onDelete = useCallback((targetId) => {
 		dispatch({ type: "DELETE", targetId });
-	};
+	}, []);
 
 	return (
 		<DiaryStateContext.Provider value={list}>

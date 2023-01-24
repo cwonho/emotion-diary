@@ -47,12 +47,12 @@ const DiaryEditor = ({ isEdit, originData }) => {
 		}
 	};
 
-	const handleDelete = () => {
+	const handleDelete = useCallback(() => {
 		if (window.confirm("일기를 삭제하시겠습니까?")) {
 			onDelete(originData.id);
 			navigate("/", { replace: true });
 		}
-	};
+	}, []);
 
 	useEffect(() => {
 		if (isEdit) {
