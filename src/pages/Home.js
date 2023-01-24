@@ -24,7 +24,10 @@ const Home = () => {
 			const lastDay = new Date(
 				currDate.getFullYear(),
 				currDate.getMonth() + 1,
-				0
+				0,
+				23,
+				59,
+				59
 			).getTime();
 
 			setMonthList(
@@ -34,10 +37,6 @@ const Home = () => {
 			);
 		}
 	}, [diaryList, currDate]);
-
-	useEffect(() => {
-		console.log(monthList);
-	}, [monthList]);
 
 	const increaseMonth = () => {
 		setCurrDate(
