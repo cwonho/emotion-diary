@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 - [x] 일기를 선택하면 상세페이지로 이동
 - [x] localStorage를 이용하여 일기 저장되도록 구현
 
-## `일기 상태관리 로직`
+### `일기 상태관리 로직`
 
 ```javascript
 // src/App.js
