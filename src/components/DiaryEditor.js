@@ -79,7 +79,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
 			/>
 			<div>
 				<section>
-					<h4>오늘은 언제인가요?</h4>
+					<h4>📅 오늘은 언제인가요?</h4>
 					<div className="input_box">
 						<input
 							className="input_date"
@@ -90,7 +90,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
 					</div>
 				</section>
 				<section>
-					<h4>오늘의 감정</h4>
+					<h4>👏🏼 오늘의 감정</h4>
 					<div className="emotion_list_wrapper">
 						{emotionList.map((item) => (
 							<EmotionItem
@@ -103,7 +103,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
 					</div>
 				</section>
 				<section>
-					<h4>오늘의 일기</h4>
+					<h4>📝 오늘의 일기</h4>
 					<div className="text_input_wrapper">
 						<textarea
 							placeholder="오늘은 어땠나요?"

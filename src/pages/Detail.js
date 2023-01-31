@@ -10,7 +10,7 @@ import Header from "../components/Header";
 const Detail = () => {
 	const [diary, setDiary] = useState();
 
-	const { id } = useParams([]);
+	const { id } = useParams();
 	const navigate = useNavigate();
 
 	const diaryList = useContext(DiaryStateContext);

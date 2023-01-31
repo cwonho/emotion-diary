@@ -37,7 +37,7 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
-function App() {
+const App = () => {
 	const [list, dispatch] = useReducer(reducer, []);
 
 	const listId = useRef(0);
@@ -106,6 +106,6 @@ function App() {
 			</DiaryDispatchContext.Provider>
 		</DiaryStateContext.Provider>
 	);
-}
+};
 
 export default App;

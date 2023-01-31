@@ -83,7 +83,7 @@ const DiaryList = ({ diaryList }) => {
 					/>
 				</div>
 				<div className="right_col">
-					<Button type={"positive"} text={"새 일기쓰기"} onClick={goNew} />
+					<Button type={"positive"} text={"✏️ 새 일기쓰기"} onClick={goNew} />
 				</div>
 			</div>
 			{getProcessedDiaryList().map((item) => (
