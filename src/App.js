@@ -1,4 +1,10 @@
-import React, { useEffect, useReducer, useRef, useCallback } from "react";
+import React, {
+	useEffect,
+	useReducer,
+	useRef,
+	useCallback,
+	useMemo,
+} from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
@@ -90,9 +96,13 @@ const App = () => {
 		dispatch({ type: "DELETE", targetId });
 	}, []);
 
+	const memoizedDispatches = useMemo(() => {
+		return { onCreate, onEdit, onDelete };
+	}, []);
+
 	return (
 		<DiaryStateContext.Provider value={list}>
-			<DiaryDispatchContext.Provider value={{ onCreate, onDelete, onEdit }}>
+			<DiaryDispatchContext.Provider value={memoizedDispatches}>
 				<BrowserRouter>
 					<div className="App">
 						<Routes>
